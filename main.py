@@ -11,11 +11,21 @@ from telegram.ext import ApplicationBuilder, MessageHandler, filters, ContextTyp
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
 
+# PythonAnywhere free tier proxy check
+PROXY_URL = os.environ.get("HTTP_PROXY") or os.environ.get("http_proxy")
+if not PROXY_URL and "PYTHONANYWHERE_DOMAIN" in os.environ or os.path.exists("/home/Devdarshan"):
+    PROXY_URL = "http://proxy.server:3128"
+
 # System prompt giving Jarvis his personality
 SYSTEM_PROMPT = """You are Jarvis, a brilliant, helpful, friendly, and concise personal AI assistant. 
 You are speaking directly to Devdarshan on his phone. Keep answers direct, friendly, and natural."""
 
 conversation_history = {}
+
+def get_httpx_client(**kwargs):
+    if PROXY_URL:
+        return httpx.Client(proxy=PROXY_URL, **kwargs)
+    return httpx.Client(**kwargs)
 
 def ask_groq(chat_id: int, user_text: str) -> str:
     """Send text to Groq API (Qwen 3.8 27B / GPT-OSS 120B) with memory."""
@@ -31,17 +41,17 @@ def ask_groq(chat_id: int, user_text: str) -> str:
     messages = [conversation_history[chat_id][0]] + conversation_history[chat_id][-14:]
     
     try:
-        resp = httpx.post(
-            "https://api.groq.com/openai/v1/chat/completions",
-            headers={"Authorization": f"Bearer {GROQ_API_KEY}"},
-            json={
-                "model": "qwen/qwen3.8-27b",
-                "messages": messages,
-                "temperature": 0.7,
-                "max_tokens": 1024
-            },
-            timeout=30.0
-        )
+        with get_httpx_client(timeout=30.0) as client:
+            resp = client.post(
+                "https://api.groq.com/openai/v1/chat/completions",
+                headers={"Authorization": f"Bearer {GROQ_API_KEY}"},
+                json={
+                    "model": "qwen/qwen3.8-27b",
+                    "messages": messages,
+                    "temperature": 0.7,
+                    "max_tokens": 1024
+                }
+            )
         if resp.status_code == 200:
             reply = resp.json()["choices"][0]["message"]["content"]
             conversation_history[chat_id].append({"role": "assistant", "content": reply})
@@ -60,13 +70,17 @@ async def transcribe_voice(voice_bytes: bytes) -> str:
     try:
         files = {"file": ("voice.ogg", voice_bytes, "audio/ogg")}
         data = {"model": "whisper-large-v3-turbo"}
-        resp = httpx.post(
-            "https://api.groq.com/openai/v1/audio/transcriptions",
-            headers={"Authorization": f"Bearer {GROQ_API_KEY}"},
-            files=files,
-            data=data,
-            timeout=30.0
-        )
+        async_kwargs = {"timeout": 30.0}
+        if PROXY_URL:
+            async_kwargs["proxy"] = PROXY_URL
+            
+        async with httpx.AsyncClient(**async_kwargs) as client:
+            resp = await client.post(
+                "https://api.groq.com/openai/v1/audio/transcriptions",
+                headers={"Authorization": f"Bearer {GROQ_API_KEY}"},
+                files=files,
+                data=data
+            )
         if resp.status_code == 200:
             return resp.json().get("text", "").strip()
         else:
@@ -117,8 +131,13 @@ def main():
         print("ERROR: TELEGRAM_BOT_TOKEN environment variable is not set!")
         sys.exit(1)
         
-    print("[Jarvis] Booting Cloud & Voice enabled Telegram Bot...")
-    app = ApplicationBuilder().token(TELEGRAM_BOT_TOKEN).build()
+    print(f"[Jarvis] Booting Cloud & Voice enabled Telegram Bot (Proxy: {PROXY_URL or 'Direct'})...")
+    
+    builder = ApplicationBuilder().token(TELEGRAM_BOT_TOKEN)
+    if PROXY_URL:
+        builder = builder.proxy(PROXY_URL).get_updates_proxy(PROXY_URL)
+        
+    app = builder.build()
     
     # Listen to both TEXT and VOICE notes
     app.add_handler(MessageHandler(filters.TEXT & (~filters.COMMAND), handle_text))
