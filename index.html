@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>JARVIS Mobile</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0d1117">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    body { background-color: #0b0e14; color: #e6edf3; display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+    
+    header { background: #161b22; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #30363d; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+    .logo-container { display: flex; align-items: center; gap: 10px; }
+    .status-orb { width: 12px; height: 12px; border-radius: 50%; background-color: #2ea043; box-shadow: 0 0 10px #2ea043; animation: pulse 2s infinite; }
+    @keyframes pulse { 0% { opacity: 0.6; } 50% { opacity: 1; } 100% { opacity: 0.6; } }
+    .title { font-weight: 700; font-size: 1.15rem; letter-spacing: 1px; color: #58a6ff; }
+    .mode-tag { font-size: 0.75rem; background: #21262d; border: 1px solid #30363d; padding: 3px 8px; border-radius: 12px; color: #8b949e; cursor: pointer; }
+
+    #chat-container { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 14px; }
+    .message { max-width: 85%; padding: 12px 16px; border-radius: 18px; line-height: 1.45; font-size: 0.95rem; word-wrap: break-word; }
+    .user { align-self: flex-end; background: #1f6feb; color: white; border-bottom-right-radius: 4px; }
+    .jarvis { align-self: flex-start; background: #21262d; color: #c9d1d9; border: 1px solid #30363d; border-bottom-left-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+    .voice-tag { font-size: 0.75rem; display: inline-flex; align-items: center; gap: 4px; color: #58a6ff; margin-bottom: 4px; }
+
+    .action-bar { background: #161b22; padding: 12px 16px; border-top: 1px solid #30363d; display: flex; align-items: center; gap: 10px; }
+    #text-input { flex: 1; background: #0d1117; border: 1px solid #30363d; border-radius: 24px; padding: 12px 16px; color: white; font-size: 0.95rem; outline: none; }
+    #text-input:focus { border-color: #58a6ff; }
+    .btn { background: none; border: none; outline: none; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    
+    #mic-btn { width: 48px; height: 48px; border-radius: 50%; background: #238636; color: white; transition: all 0.2s; box-shadow: 0 2px 8px rgba(0,0,0,0.4); }
+    #mic-btn.recording { background: #da3633; animation: record-pulse 1s infinite; transform: scale(1.1); }
+    @keyframes record-pulse { 0% { box-shadow: 0 0 0 0 rgba(218,54,51,0.7); } 70% { box-shadow: 0 0 0 14px rgba(218,54,51,0); } 100% { box-shadow: 0 0 0 0 rgba(218,54,51,0); } }
+    
+    #send-btn { width: 44px; height: 44px; border-radius: 50%; background: #1f6feb; color: white; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <div class="status-orb"></div>
+      <div class="title">JARVIS AI</div>
+    </div>
+    <div id="key-btn" class="mode-tag">⚙️ Setup Key</div>
+  </header>
+
+  <div id="chat-container">
+    <div class="message jarvis">
+      <div class="voice-tag">🎙️ Ready</div>
+      Hello Devdarshan! I am your personal Jarvis mobile assistant. Tap the microphone to talk or type below.
+    </div>
+  </div>
+
+  <div class="action-bar">
+    <button id="mic-btn" class="btn" title="Hold/Tap to Speak">
+      <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/><path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/></svg>
+    </button>
+    <input type="text" id="text-input" placeholder="Ask Jarvis anything..." autocomplete="off">
+    <button id="send-btn" class="btn">
+      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+    </button>
+  </div>
+
+  <script>
+    const chatContainer = document.getElementById('chat-container');
+    const textInput = document.getElementById('text-input');
+    const sendBtn = document.getElementById('send-btn');
+    const micBtn = document.getElementById('mic-btn');
+    const keyBtn = document.getElementById('key-btn');
+    let isRecording = false;
+    let recognition;
+
+    keyBtn.addEventListener('click', () => {
+      const current = localStorage.getItem('user_api_key') || '';
+      const promptVal = prompt('Enter your Groq API Key:', current);
+      if (promptVal !== null) {
+        localStorage.setItem('user_api_key', promptVal.trim());
+        alert('Key saved successfully!');
+      }
+    });
+
+    if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      recognition = new SpeechRecognition();
+      recognition.continuous = false;
+      recognition.interimResults = false;
+
+      recognition.onstart = () => {
+        isRecording = true;
+        micBtn.classList.add('recording');
+      };
+
+      recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        addMessage(transcript, 'user');
+        sendToJarvis(transcript);
+      };
+
+      recognition.onerror = () => {
+        stopRecording();
+      };
+
+      recognition.onend = () => {
+        stopRecording();
+      };
+    }
+
+    function stopRecording() {
+      isRecording = false;
+      micBtn.classList.remove('recording');
+    }
+
+    micBtn.addEventListener('click', () => {
+      if (!recognition) {
+        alert('Speech recognition is not supported on this browser.');
+        return;
+      }
+      if (isRecording) {
+        recognition.stop();
+      } else {
+        recognition.start();
+      }
+    });
+
+    sendBtn.addEventListener('click', () => {
+      const text = textInput.value.trim();
+      if (!text) return;
+      addMessage(text, 'user');
+      textInput.value = '';
+      sendToJarvis(text);
+    });
+
+    textInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') sendBtn.click();
+    });
+
+    function addMessage(text, sender) {
+      const msg = document.createElement('div');
+      msg.className = `message ${sender}`;
+      msg.textContent = text;
+      chatContainer.appendChild(msg);
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+
+    async function sendToJarvis(query) {
+      let key = localStorage.getItem('user_api_key');
+      if (!key) {
+        key = prompt('Please enter your Groq API Key to chat:');
+        if (key) localStorage.setItem('user_api_key', key.trim());
+        else return;
+      }
+
+      const typing = document.createElement('div');
+      typing.className = 'message jarvis';
+      typing.textContent = 'Thinking...';
+      chatContainer.appendChild(typing);
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+
+      try {
+        const resp = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + key
+          },
+          body: JSON.stringify({
+            model: 'qwen/qwen3.8-27b',
+            messages: [
+              { role: 'system', content: 'You are Jarvis, a brilliant, friendly personal AI assistant. Speak directly to Devdarshan.' },
+              { role: 'user', content: query }
+            ],
+            temperature: 0.7,
+            max_tokens: 512
+          })
+        });
+        const data = await resp.json();
+        const reply = data.choices[0].message.content;
+        typing.textContent = reply;
+
+        if ('speechSynthesis' in window) {
+          const utterance = new SpeechSynthesisUtterance(reply);
+          window.speechSynthesis.speak(utterance);
+        }
+      } catch (err) {
+        typing.textContent = 'Error connecting to Jarvis core.';
+      }
+    }
+  </script>
+</body>
+</html>
