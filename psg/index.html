@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
-  <title>Distinguished Alumni — Year by Year | PSG Institute of Management</title>
+  <title>PSGIM Distinguished Alumni — Year by Year (2003–2026) | PSG Institute of Management</title>
   
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Inter & Cinzel & Playfair Display -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
   
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -71,130 +71,122 @@
 </head>
 <body class="bg-slate-100 text-slate-800 font-sans antialiased min-h-screen flex flex-col pb-20 md:pb-0">
 
-  <!-- TOP CENTENARY ANNOUNCEMENT -->
-  <div class="bg-psg-navyDark text-white py-1 px-3 text-[11px] text-center border-b border-psg-gold/30 flex items-center justify-center gap-2 font-medium">
-    <img src="assets/psg-centenary-100-logo.png" alt="100 Years" class="h-4 w-auto object-contain bg-white/90 rounded px-1" />
-    <span class="text-psg-goldLight font-bold">1926–2026:</span>
-    <span class="truncate">Celebrating 100 Years of PSG &amp; Sons' Charities</span>
+  <!-- TOP INSTITUTIONAL BAR: PSG INSTITUTE OF MANAGEMENT -->
+  <div class="bg-psg-navyDark text-white py-1.5 px-3 text-[11px] text-center border-b border-psg-gold/30 flex items-center justify-center gap-2 font-medium">
+    <span class="w-1.5 h-1.5 rounded-full bg-psg-amber animate-pulse"></span>
+    <span class="text-psg-goldLight font-bold">PSG INSTITUTE OF MANAGEMENT:</span>
+    <span class="truncate">Distinguished Alumni Roll of Honour &bull; From Inception (2003–2026)</span>
   </div>
 
-  <!-- MAIN NAVIGATION BAR (MOBILE OPTIMIZED) -->
+  <!-- MAIN NAVIGATION BAR (PSGIM & PSGMAA) -->
   <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-xs">
-    <div class="max-w-7xl mx-auto px-3 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-2">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 h-15 sm:h-16 flex items-center justify-between gap-2">
       
-      <!-- Logo & Centenary Emblem -->
+      <!-- Brand: PSG Institute of Management -->
       <a href="#" class="flex items-center gap-2.5 shrink-0">
-        <!-- 100 Centenary Official Logo -->
-        <div class="h-9 sm:h-11 w-auto bg-white rounded-lg p-0.5 border border-slate-200 flex items-center justify-center shadow-2xs">
-          <img src="assets/psg-centenary-100-logo.png" alt="PSG Centenary 100 Years" class="h-full w-auto object-contain" />
+        <!-- PSGIM Monogram Badge -->
+        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-psg-navy to-psg-navyDark text-white flex items-center justify-center shadow-xs border border-psg-gold/40 shrink-0">
+          <div class="text-center leading-none">
+            <span class="font-cinzel font-bold text-xs sm:text-sm text-psg-gold block">PSG</span>
+            <span class="font-sans font-extrabold text-[8px] text-white tracking-widest block">IM</span>
+          </div>
         </div>
         
         <div class="leading-tight">
           <div class="flex items-center gap-1.5">
-            <span class="font-cinzel font-bold text-base sm:text-lg text-psg-navy tracking-tight">PSGMAA</span>
+            <span class="font-cinzel font-bold text-base sm:text-lg text-psg-navy tracking-tight">PSGIM</span>
             <span class="text-[9px] px-1.5 py-0.2 rounded bg-amber-100 text-amber-900 font-bold border border-amber-300">
-              Inception
+              Alumni Association
             </span>
           </div>
-          <p class="text-[10px] text-slate-500 font-medium truncate max-w-[170px] sm:max-w-none">
-            PSG Institute of Management
+          <p class="text-[10px] text-slate-500 font-medium truncate max-w-[200px] sm:max-w-none">
+            PSG Institute of Management, Coimbatore
           </p>
         </div>
       </a>
 
-      <!-- Quick Action Buttons -->
-      <div class="flex items-center gap-1.5 sm:gap-2">
-        <a href="#event-banner" class="px-2.5 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-600 text-white text-[11px] font-bold shadow-xs flex items-center gap-1 transition-colors active:scale-95">
-          <i data-lucide="store" class="w-3.5 h-3.5"></i>
-          <span>Expo 2026</span>
+      <!-- Quick Action: Official Nomination Button -->
+      <div class="flex items-center gap-2">
+        <a href="#criteria-section" class="hidden sm:inline-flex items-center gap-1 text-xs text-slate-600 hover:text-psg-navy font-semibold px-2 py-1">
+          <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+          <span>Criteria</span>
         </a>
 
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdT4mQf0zs5DxrNSZ2t0x_9zQcfcCl_z7arVwRRrrWWifpGdA/viewform?vc=0&c=0&w=1&flr=0" 
            target="_blank"
-           class="px-2.5 py-1.5 rounded-lg bg-psg-navy hover:bg-psg-navyDark text-white text-[11px] font-bold shadow-xs flex items-center gap-1 transition-colors active:scale-95">
-          <i data-lucide="user-plus" class="w-3.5 h-3.5 text-psg-amber"></i>
-          <span class="hidden xs:inline">Nominate</span>
+           class="px-3 py-2 rounded-xl bg-psg-amber hover:bg-amber-500 text-psg-navyDark text-xs font-bold shadow-xs flex items-center gap-1.5 transition-colors active:scale-95">
+          <i data-lucide="user-plus" class="w-3.5 h-3.5"></i>
+          <span>Nominate Alumnus</span>
         </a>
       </div>
     </div>
   </header>
 
-  <!-- HERO SECTION WITH ARCHITECTURAL WATERMARK (1926 HISTORIC BUILDING) -->
+  <!-- HERO SECTION: 100% FOCUSED ON PSGIM MANAGEMENT LEGACY -->
   <section class="relative bg-psg-navyDark text-white px-3 sm:px-6 pt-7 pb-10 sm:py-16 overflow-hidden">
     
-    <!-- WATERMARK: Historic 1926 Building in background -->
+    <!-- WATERMARK: Iconic White Dome Gate of PSGIM in background -->
     <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
       <img 
-        src="assets/psg-heritage-building-1926.png" 
+        src="assets/psg-im-dome-entrance.png" 
         alt="" 
         class="w-full h-full object-cover object-center opacity-15 mix-blend-luminosity filter blur-[0.3px] scale-105"
       />
-      <!-- Gradient overlay for perfect contrast -->
+      <!-- Gradient overlay for legibility -->
       <div class="absolute inset-0 bg-gradient-to-b from-psg-navyDark/90 via-psg-navy/95 to-slate-900/98"></div>
     </div>
 
-    <!-- WATERMARK: Large Centenary 100 Logo in top-right background -->
-    <div class="absolute -right-10 -top-10 w-72 sm:w-96 h-72 sm:h-96 pointer-events-none opacity-[0.06] z-0">
-      <img src="assets/psg-centenary-100-logo.png" alt="" class="w-full h-full object-contain filter invert" />
+    <!-- WATERMARK: Modern PSGIM Campus in top-right background -->
+    <div class="absolute -right-10 -top-10 w-72 sm:w-96 h-72 sm:h-96 pointer-events-none opacity-[0.05] z-0">
+      <img src="assets/psg-im-campus-aerial.png" alt="" class="w-full h-full object-cover" />
     </div>
 
     <div class="max-w-6xl mx-auto relative z-10 text-center">
       
-      <!-- Centenary Badge with Logo -->
-      <div class="flex items-center justify-center mb-4">
+      <!-- PSGIM Badge -->
+      <div class="flex items-center justify-center mb-3">
         <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-psg-gold/40 shadow-inner">
-          <img src="assets/psg-centenary-100-logo.png" alt="PSG 100" class="h-5 w-auto bg-white rounded px-1" />
+          <span class="w-2 h-2 rounded-full bg-psg-amber"></span>
           <span class="text-psg-goldLight text-[11px] sm:text-xs font-bold tracking-wide uppercase">
-            100 Years of Industrial &amp; Educational Heritage (1926–2026)
+            PSG Institute of Management &bull; Roll of Honour
           </span>
         </div>
       </div>
 
       <!-- Main Headline -->
       <h1 class="font-cinzel text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-2 leading-tight">
-        Distinguished Alumni <br class="sm:hidden">
+        PSGIM Distinguished Alumni <br class="sm:hidden">
         <span class="text-transparent bg-clip-text bg-gradient-to-r from-psg-goldLight via-psg-amber to-amber-200">
-          Year by Year
+          Year by Year (2003–2026)
         </span>
       </h1>
       
-      <p class="text-xs sm:text-sm text-slate-300 font-light leading-relaxed max-w-xl mx-auto mb-6">
-        Honoring 36 exemplary laureates from inception to the Centenary across 24 editions (2003–2026).
+      <p class="text-xs sm:text-sm text-slate-300 font-light leading-relaxed max-w-2xl mx-auto mb-6">
+        Conferred by <strong>PSG Institute of Management (PSGIM)</strong> to celebrate MBA graduates who have shaped global industries, scaled transformative enterprises, and brought distinction to the alma mater.
       </p>
 
-      <!-- 3-IMAGE HERITAGE STRIP WITH SOFT SHADOW -->
-      <div class="grid grid-cols-3 gap-2 sm:gap-4 max-w-4xl mx-auto mb-6">
+      <!-- 2-IMAGE PSGIM CAMPUS SHOWCASE -->
+      <div class="grid grid-cols-2 gap-2 sm:gap-4 max-w-2xl mx-auto mb-6">
         
-        <!-- Image 1: 1926 Historic Building -->
-        <div class="group relative rounded-xl sm:rounded-2xl overflow-hidden bg-slate-800 border border-white/20 shadow-lg">
-          <div class="aspect-[4/3] sm:aspect-[16/10] overflow-hidden">
-            <img src="assets/psg-heritage-building-1926.png" alt="1926 Historic Institute" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-          </div>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent flex flex-col justify-end p-2 sm:p-3 text-left">
-            <span class="text-[9px] sm:text-[10px] text-psg-amber font-bold uppercase tracking-wider">Heritage &bull; 1926</span>
-            <div class="text-[10px] sm:text-xs font-semibold text-white truncate">PSG Industrial Institute</div>
-          </div>
-        </div>
-
-        <!-- Image 2: Iconic White Dome Gate -->
+        <!-- Image 1: Iconic White Dome Gate -->
         <div class="group relative rounded-xl sm:rounded-2xl overflow-hidden bg-slate-800 border border-psg-gold/50 shadow-lg ring-1 ring-psg-amber/30">
-          <div class="aspect-[4/3] sm:aspect-[16/10] overflow-hidden">
+          <div class="aspect-[16/10] overflow-hidden">
             <img src="assets/psg-im-dome-entrance.png" alt="PSG Institute of Management Dome" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
           </div>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent flex flex-col justify-end p-2 sm:p-3 text-left">
-            <span class="text-[9px] sm:text-[10px] text-psg-goldLight font-bold uppercase tracking-wider">Gateway</span>
-            <div class="text-[10px] sm:text-xs font-semibold text-white truncate">PSG IM Dome Entrance</div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent flex flex-col justify-end p-2.5 sm:p-3 text-left">
+            <span class="text-[9px] sm:text-[10px] text-psg-goldLight font-bold uppercase tracking-wider">Gateway of Excellence</span>
+            <div class="text-[11px] sm:text-xs font-semibold text-white truncate">PSG IM Iconic Dome Entrance</div>
           </div>
         </div>
 
-        <!-- Image 3: Modern Campus Aerial -->
+        <!-- Image 2: Modern Management Campus -->
         <div class="group relative rounded-xl sm:rounded-2xl overflow-hidden bg-slate-800 border border-white/20 shadow-lg">
-          <div class="aspect-[4/3] sm:aspect-[16/10] overflow-hidden">
+          <div class="aspect-[16/10] overflow-hidden">
             <img src="assets/psg-im-campus-aerial.png" alt="Modern PSG IM Campus" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
           </div>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent flex flex-col justify-end p-2 sm:p-3 text-left">
-            <span class="text-[9px] sm:text-[10px] text-psg-amber font-bold uppercase tracking-wider">Excellence</span>
-            <div class="text-[10px] sm:text-xs font-semibold text-white truncate">Modern PSG IM Campus</div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent flex flex-col justify-end p-2.5 sm:p-3 text-left">
+            <span class="text-[9px] sm:text-[10px] text-psg-amber font-bold uppercase tracking-wider">Lush Green Campus</span>
+            <div class="text-[11px] sm:text-xs font-semibold text-white truncate">PSG IM Academic Block</div>
           </div>
         </div>
 
@@ -211,63 +203,35 @@
           <div class="text-[9px] sm:text-[10px] text-slate-300 uppercase">Editions</div>
         </div>
         <div class="p-1 border-l border-white/10">
-          <div class="font-cinzel text-base sm:text-2xl font-bold text-psg-goldLight leading-none mb-0.5">7+</div>
-          <div class="text-[9px] sm:text-[10px] text-slate-300 uppercase">Sectors</div>
+          <div class="font-cinzel text-base sm:text-2xl font-bold text-psg-goldLight leading-none mb-0.5">MBA</div>
+          <div class="text-[9px] sm:text-[10px] text-slate-300 uppercase">1971–2006</div>
         </div>
         <div class="p-1 border-l border-white/10">
-          <div class="font-cinzel text-base sm:text-2xl font-bold text-amber-300 leading-none mb-0.5">100y</div>
-          <div class="text-[9px] sm:text-[10px] text-slate-300 uppercase">Centenary</div>
+          <div class="font-cinzel text-base sm:text-2xl font-bold text-amber-300 leading-none mb-0.5">2003</div>
+          <div class="text-[9px] sm:text-[10px] text-slate-300 uppercase">Inception</div>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- EVENT SPOTLIGHT WITH CENTENARY WATERMARK -->
-  <section id="event-banner" class="max-w-7xl mx-auto px-3 sm:px-6 -mt-3 relative z-20">
-    <div class="relative bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 rounded-2xl p-4 sm:p-5 text-white shadow-xl border border-amber-300/40 overflow-hidden">
-      
-      <!-- WATERMARK: Large 100 Centenary Logo in card background -->
-      <div class="absolute -right-6 -bottom-8 w-60 sm:w-80 h-60 sm:h-80 pointer-events-none opacity-20 filter invert brightness-200">
-        <img src="assets/psg-centenary-100-logo.png" alt="" class="w-full h-full object-contain object-right-bottom transform rotate-6" />
-      </div>
-
-      <div class="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-        
-        <div class="flex items-start gap-3">
-          <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-white p-1 shrink-0 flex items-center justify-center shadow-xs border border-amber-200">
-            <img src="assets/psg-centenary-100-logo.png" alt="PSG 100" class="h-full w-auto object-contain" />
-          </div>
-
-          <div>
-            <div class="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider bg-black/20 text-amber-100 px-2 py-0.5 rounded-full w-max mb-1">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-300 animate-ping"></span>
-              9–13 Dec, 2026 &bull; CODISSIA, Coimbatore
-            </div>
-            <h2 class="text-sm sm:text-lg font-cinzel font-bold text-white leading-snug">
-              PRODUCTS OF PSG PRODUCTS
-            </h2>
-            <p class="text-[11px] sm:text-xs text-amber-100 mt-0.5 line-clamp-2">
-              The Largest Alumni Enterprise Exhibition celebrating 100 years of PSG &amp; Sons' Charities with 1,000+ stalls.
-            </p>
-          </div>
+  <!-- PSGIM CITATION STATEMENT RIBBON -->
+  <section class="max-w-7xl mx-auto px-3 sm:px-6 -mt-3 relative z-20">
+    <div class="bg-gradient-to-r from-psg-navy via-psg-navyLight to-psg-navy rounded-2xl p-4 sm:p-5 text-white shadow-lg border border-psg-gold/30">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-psg-gold/20 border border-psg-gold/40 text-psg-gold flex items-center justify-center shrink-0">
+          <i data-lucide="award" class="w-5 h-5"></i>
         </div>
-
-        <div class="flex items-center gap-2 w-full sm:w-auto shrink-0 pt-1 sm:pt-0 relative z-10">
-          <a href="https://psgproducts.org" target="_blank" class="flex-1 sm:flex-none text-center px-3 py-2 rounded-xl bg-psg-navy hover:bg-psg-navyDark text-white text-xs font-bold shadow-xs active:scale-95 transition-all">
-            Exhibitor Registration
-          </a>
-          <a href="https://psgproducts.org" target="_blank" class="flex-1 sm:flex-none text-center px-3 py-2 rounded-xl bg-white hover:bg-slate-100 text-psg-navyDark text-xs font-bold shadow-xs active:scale-95 transition-all">
-            Visitor Pass
-          </a>
+        <div class="flex-1 text-xs sm:text-sm text-slate-200 leading-snug">
+          <strong class="text-psg-goldLight font-cinzel tracking-wide block mb-0.5">The Spirit of PSGIM Excellence:</strong>
+          Honoring exemplary leadership in corporate governance, entrepreneurship, public service, and academic scholarship across 24 consecutive years since inception in 2003.
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- STICKY THUMB-FRIENDLY CONTROLS & YEAR SELECTOR -->
-  <div class="sticky top-14 sm:top-16 z-30 bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-xs">
+  <div class="sticky top-15 sm:top-16 z-30 bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-xs">
     
     <!-- Mobile Search Input -->
     <div class="max-w-7xl mx-auto px-3 sm:px-6 pt-3 pb-2">
@@ -277,7 +241,7 @@
           type="text" 
           id="search-input" 
           oninput="handleSearch(this.value)"
-          placeholder="Search alumnus, company, batch, or year..." 
+          placeholder="Search PSGIM alumni by name, company, batch, or year..." 
           class="w-full pl-9 pr-8 py-2 rounded-xl bg-slate-100 border border-slate-200 focus:bg-white focus:border-psg-navy focus:ring-2 focus:ring-psg-navy/10 text-xs sm:text-sm outline-none transition-all placeholder:text-slate-400"
         />
         <button id="clear-search-btn" onclick="clearSearch()" class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center text-xs">
@@ -300,7 +264,7 @@
     <div class="bg-slate-50 border-t border-slate-100 px-3 sm:px-6 py-2">
       <div class="max-w-7xl mx-auto flex items-center gap-1.5 overflow-x-auto no-scrollbar" id="sector-chips-track">
         <button onclick="filterBySector('all')" data-sector="all" class="sector-chip active shrink-0 px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-white border border-slate-300 text-slate-800 shadow-2xs">
-          All Domains
+          All Domains (36)
         </button>
         <button onclick="filterBySector('Manufacturing & Infrastructure')" data-sector="Manufacturing & Infrastructure" class="sector-chip shrink-0 px-2.5 py-1 rounded-lg text-[11px] font-medium bg-white/70 border border-slate-200 text-slate-600">
           Manufacturing (10)
@@ -329,7 +293,7 @@
     <!-- Active Count & Reset -->
     <div class="px-3 sm:px-6 py-1.5 flex items-center justify-between text-[11px] text-slate-500 border-t border-slate-100 bg-white">
       <div>
-        Showing <strong class="text-psg-navy font-bold" id="filtered-count">36</strong> of 36 alumni
+        Showing <strong class="text-psg-navy font-bold" id="filtered-count">36</strong> PSGIM Honorees
         <span id="active-year-label" class="ml-1 text-slate-400"></span>
       </div>
       <button onclick="resetAllFilters()" id="reset-btn" class="hidden text-rose-600 font-semibold flex items-center gap-1 active:scale-95">
@@ -339,18 +303,18 @@
 
   </div>
 
-  <!-- MAIN ALUMNI LIST CONTAINER (CARDS WITH WATERMARKS) -->
+  <!-- MAIN ALUMNI LIST CONTAINER (PSGIM HONOREES) -->
   <main class="flex-grow max-w-7xl mx-auto px-3 sm:px-6 py-4 w-full">
     <div id="alumni-display-container">
       <!-- Populated dynamically via JavaScript -->
     </div>
   </main>
 
-  <!-- NOMINATION GUIDELINES WITH WATERMARK & CAMPUS PHOTO -->
-  <section class="max-w-7xl mx-auto px-3 sm:px-6 py-6">
+  <!-- NOMINATION GUIDELINES WITH PSGIM DOME BANNER -->
+  <section id="criteria-section" class="max-w-7xl mx-auto px-3 sm:px-6 py-6">
     <div class="relative bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs">
       
-      <!-- Top banner image with dome entrance -->
+      <!-- Top banner image with PSGIM dome entrance -->
       <div class="relative h-36 sm:h-48 w-full overflow-hidden bg-slate-900">
         <img src="assets/psg-im-dome-entrance.png" alt="PSG Institute of Management" class="w-full h-full object-cover object-center opacity-70" />
         <div class="absolute inset-0 bg-gradient-to-t from-psg-navyDark via-psg-navyDark/60 to-transparent flex flex-col justify-end p-4 sm:p-6 text-white">
@@ -361,12 +325,12 @@
             <span class="font-cinzel text-sm sm:text-lg font-bold text-white">PSG Institute of Management</span>
           </div>
           <p class="text-xs text-psg-goldLight font-medium">
-            Nomination Guidelines &bull; Distinguished Alumni Awards
+            Criteria for PSG IM Distinguished Alumni Nominations
           </p>
         </div>
       </div>
 
-      <!-- Content Area with Modern Campus Watermark -->
+      <!-- Content Area with Modern PSGIM Campus Watermark -->
       <div class="relative p-4 sm:p-6">
         
         <!-- Subtle Campus Watermark in bottom corner -->
@@ -375,7 +339,7 @@
         </div>
 
         <p class="relative z-10 text-xs text-slate-500 mb-4">
-          Conferred annually to honor outstanding leadership, innovation, and service. Preferred age category: 45 to 55 years.
+          Conferred annually by PSG Institute of Management to honor outstanding leadership, innovation, and service. Preferred age category: 45 to 55 years.
         </p>
 
         <div class="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs text-slate-600 mb-6">
@@ -410,7 +374,7 @@
              target="_blank"
              class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-3 rounded-xl bg-psg-navy text-white text-xs font-bold shadow-xs hover:bg-psg-navyDark transition-all active:scale-95">
             <i data-lucide="file-check-2" class="w-4 h-4 text-psg-amber"></i>
-            <span>Submit Nomination Online</span>
+            <span>Submit PSGIM Nomination Online</span>
           </a>
         </div>
 
@@ -418,7 +382,7 @@
     </div>
   </section>
 
-  <!-- MOBILE BOTTOM SHEET MODAL (WITH WATERMARK) -->
+  <!-- MOBILE BOTTOM SHEET MODAL (PSGIM BRANDED) -->
   <div id="alumni-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-xs flex items-end sm:items-center justify-center">
     
     <!-- Dialog Sheet Container -->
@@ -443,7 +407,7 @@
     </div>
   </div>
 
-  <!-- FIXED MOBILE BOTTOM QUICK BAR (THUMB OPERATION) -->
+  <!-- FIXED MOBILE BOTTOM QUICK BAR (THUMB OPERATION - PSGIM) -->
   <div class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 px-4 py-2 pb-safe flex items-center justify-around text-[10px] font-semibold text-slate-600 shadow-lg">
     
     <button onclick="scrollToTop()" class="flex flex-col items-center gap-0.5 active:scale-95 text-psg-navy">
@@ -461,45 +425,47 @@
       <span>Years</span>
     </button>
 
-    <a href="#event-banner" class="flex flex-col items-center gap-0.5 active:scale-95">
-      <i data-lucide="store" class="w-4 h-4 text-amber-500"></i>
-      <span>Expo</span>
+    <a href="#criteria-section" class="flex flex-col items-center gap-0.5 active:scale-95">
+      <i data-lucide="file-check-2" class="w-4 h-4 text-slate-600"></i>
+      <span>Criteria</span>
     </a>
 
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdT4mQf0zs5DxrNSZ2t0x_9zQcfcCl_z7arVwRRrrWWifpGdA/viewform?vc=0&c=0&w=1&flr=0" target="_blank" class="flex flex-col items-center gap-0.5 active:scale-95">
-      <i data-lucide="user-plus" class="w-4 h-4"></i>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdT4mQf0zs5DxrNSZ2t0x_9zQcfcCl_z7arVwRRrrWWifpGdA/viewform?vc=0&c=0&w=1&flr=0" target="_blank" class="flex flex-col items-center gap-0.5 active:scale-95 text-amber-700">
+      <i data-lucide="user-plus" class="w-4 h-4 text-amber-600"></i>
       <span>Nominate</span>
     </a>
 
   </div>
 
-  <!-- FOOTER WITH CENTENARY WATERMARK -->
+  <!-- FOOTER: PURE PSG INSTITUTE OF MANAGEMENT -->
   <footer class="relative bg-slate-900 text-slate-400 py-10 text-xs border-t border-slate-800 overflow-hidden">
     
     <!-- WATERMARK in Footer -->
-    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 pointer-events-none opacity-[0.04]">
-      <img src="assets/psg-centenary-100-logo.png" alt="" class="w-full h-full object-contain filter invert" />
+    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 pointer-events-none opacity-[0.03]">
+      <img src="assets/psg-im-dome-entrance.png" alt="" class="w-full h-full object-contain filter invert" />
     </div>
 
     <div class="max-w-7xl mx-auto px-4 text-center space-y-3 relative z-10">
       
       <div class="flex items-center justify-center gap-2">
-        <img src="assets/psg-centenary-100-logo.png" alt="PSG 100" class="h-6 w-auto bg-white rounded p-0.5" />
+        <div class="w-8 h-8 rounded-lg bg-psg-navy border border-psg-gold/30 text-psg-gold flex items-center justify-center font-cinzel font-bold text-xs">
+          PSGIM
+        </div>
         <div class="font-cinzel font-bold text-white text-sm">
-          PSG Institute of Management Alumni Association
+          PSG Institute of Management Alumni Association (PSGMAA)
         </div>
       </div>
 
       <p class="text-[11px] text-slate-500 max-w-md mx-auto">
-        Celebrating 100 Years of PSG &amp; Sons' Charities (1926–2026) &bull; PRODUCTS OF PSG Exhibition Dec 9–13, 2026 @ CODISSIA.
+        Avinashi Road, Peelamedu, Coimbatore, Tamil Nadu 641004 &bull; Celebrating 24 Years of Inception (2003–2026).
       </p>
 
       <div class="pt-2 text-[10px] text-slate-600 flex items-center justify-center gap-4">
-        <span>&copy; 2026 PSGMAA</span>
+        <span>&copy; 2026 PSGIM &bull; PSGMAA</span>
+        <span>&bull;</span>
+        <a href="https://psgim.ac.in" target="_blank" class="hover:text-slate-400">psgim.ac.in</a>
         <span>&bull;</span>
         <a href="https://psgmaa.com" target="_blank" class="hover:text-slate-400">psgmaa.com</a>
-        <span>&bull;</span>
-        <a href="https://psgproducts.org" target="_blank" class="hover:text-slate-400">psgproducts.org</a>
       </div>
     </div>
   </footer>
@@ -670,8 +636,8 @@
             <div class="w-12 h-12 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center mx-auto mb-3">
               <i data-lucide="search-x" class="w-6 h-6"></i>
             </div>
-            <div class="font-bold text-sm text-slate-800 mb-1">No Alumni Found</div>
-            <p class="text-xs text-slate-500 mb-4">No laureates match your active search or filter.</p>
+            <div class="font-bold text-sm text-slate-800 mb-1">No Honorees Found</div>
+            <p class="text-xs text-slate-500 mb-4">No PSGIM alumni match your active search or filter.</p>
             <button onclick="resetAllFilters()" class="px-4 py-2 rounded-xl bg-psg-navy text-white text-xs font-semibold">
               Reset Filters
             </button>
@@ -710,7 +676,7 @@
                 </span>
               </div>
               <div class="text-[10px] text-slate-400 font-medium">
-                DA ${yr}
+                PSGIM DA &bull; ${yr}
               </div>
             </div>
 
@@ -728,7 +694,7 @@
       lucide.createIcons();
     }
 
-    // Render single mobile-optimized card with subtle Centenary Watermark
+    // Render single mobile-optimized card with PSGIM focus
     function renderMobileCard(a) {
       const badgeStyle = getSectorBadge(a.sector);
       const initials = a.name.replace(/^(Mr\.|Ms\.|Mrs\.|Dr\.)\s*/i, '').split(' ').map(n => n[0]).slice(0, 2).join('');
@@ -736,9 +702,9 @@
       return `
         <div class="relative group bg-white rounded-2xl p-3.5 border border-slate-200/90 shadow-2xs hover:shadow-md transition-all active:bg-slate-50/50 flex flex-col justify-between cursor-pointer overflow-hidden" onclick="openModal(${a.id})">
           
-          <!-- WATERMARK: Subtle Centenary Crest in top-right of every card -->
-          <div class="absolute -right-4 -top-4 w-20 h-20 opacity-[0.05] group-hover:opacity-[0.10] transition-opacity pointer-events-none">
-            <img src="assets/psg-centenary-100-logo.png" alt="" class="w-full h-full object-contain" />
+          <!-- WATERMARK: PSGIM Dome gate subtly in top-right of card -->
+          <div class="absolute -right-3 -top-3 w-16 h-16 opacity-[0.05] group-hover:opacity-[0.10] transition-opacity pointer-events-none">
+            <img src="assets/psg-im-dome-entrance.png" alt="" class="w-full h-full object-contain" />
           </div>
 
           <div class="relative z-10 flex items-start gap-3">
@@ -760,14 +726,14 @@
             <!-- Alumnus Info -->
             <div class="flex-1 min-w-0">
               
-              <!-- Badges Row -->
+              <!-- Badges Row: Year + MBA Batch -->
               <div class="flex items-center gap-1.5 flex-wrap mb-1">
                 <span class="text-[10px] font-bold px-1.5 py-0.2 rounded bg-amber-100 text-amber-900 border border-amber-300">
                   DA ${a.year}
                 </span>
                 ${a.batch ? `
-                  <span class="text-[9px] font-semibold px-1.5 py-0.2 rounded bg-slate-100 text-slate-700">
-                    ${a.batch}
+                  <span class="text-[9px] font-semibold px-1.5 py-0.2 rounded bg-psg-navy/10 text-psg-navy font-mono">
+                    MBA ${a.batch}
                   </span>
                 ` : ''}
               </div>
@@ -801,7 +767,7 @@
       `;
     }
 
-    // Modal Drawer logic (Bottom sheet on phone with watermark)
+    // Modal Drawer logic (Bottom sheet on phone - PSGIM exclusive)
     function openModal(id) {
       const a = ALUMNI_DATA.find(item => item.id === id);
       if (!a) return;
@@ -823,11 +789,11 @@
               
               <div class="flex items-center justify-center sm:justify-start gap-1.5 flex-wrap mb-1.5">
                 <span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 border border-amber-300 font-bold text-xs flex items-center gap-1">
-                  <i data-lucide="award" class="w-3 h-3 text-amber-700"></i> Awardee ${a.year}
+                  <i data-lucide="award" class="w-3 h-3 text-amber-700"></i> PSGIM Awardee &bull; ${a.year}
                 </span>
                 ${a.batch ? `
                   <span class="px-2 py-0.5 rounded-full bg-psg-navy text-white text-xs font-semibold">
-                    ${a.batch}
+                    MBA ${a.batch}
                   </span>
                 ` : ''}
               </div>
@@ -850,18 +816,18 @@
 
           </div>
 
-          <!-- Citation Block -->
+          <!-- Official PSGIM Citation Block -->
           <div class="bg-slate-50/90 rounded-xl p-3.5 border border-slate-100 text-xs text-slate-700 leading-relaxed italic text-left mb-4">
             &ldquo;Recognized for distinguished accomplishments, exemplary leadership, and significant contribution to industry, academia, and society, bringing immense honor to the PSG Institute of Management.&rdquo;
           </div>
 
-          <!-- Event Notice in Modal -->
-          <div class="bg-amber-50/90 rounded-xl p-3 border border-amber-200 text-left mb-4 flex items-center gap-2.5">
-            <div class="w-8 h-8 rounded-lg bg-amber-500 text-white flex items-center justify-center shrink-0">
-              <i data-lucide="store" class="w-4 h-4"></i>
+          <!-- Institution Tag -->
+          <div class="bg-psg-navy/5 rounded-xl p-3 border border-psg-navy/10 text-left mb-4 flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-lg bg-psg-navy text-psg-gold flex items-center justify-center font-cinzel font-bold text-xs shrink-0">
+              IM
             </div>
-            <div class="flex-1 text-[11px] text-amber-900">
-              <strong>Products of PSG Expo 2026:</strong> Dec 9–13 at CODISSIA, Coimbatore celebrating 100 years of alumni enterprise.
+            <div class="flex-1 text-[11px] text-slate-700">
+              <strong>PSG Institute of Management:</strong> Department of Management Sciences &bull; Conferred annually since inception (2003).
             </div>
           </div>
 
@@ -893,12 +859,12 @@
       const decodedName = decodeURIComponent(name);
       if (navigator.share) {
         navigator.share({
-          title: `${decodedName} — PSG IM Distinguished Alumnus (${year})`,
+          title: `${decodedName} — PSGIM Distinguished Alumnus (${year})`,
           text: `Honoring ${decodedName}, PSG Institute of Management Distinguished Alumnus Awardee (${year}).`,
           url: window.location.href,
         }).catch(() => {});
       } else {
-        navigator.clipboard.writeText(`${decodedName} — PSG IM Distinguished Alumnus (${year}) ${window.location.href}`);
+        navigator.clipboard.writeText(`${decodedName} — PSGIM Distinguished Alumnus (${year}) ${window.location.href}`);
         alert('Profile link copied to clipboard!');
       }
     }
