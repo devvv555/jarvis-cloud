@@ -81,8 +81,8 @@
     <span class="truncate">Distinguished Alumni Roll of Honour &bull; From Inception (2003â€“2026)</span>
   </div>
 
-  <!-- MAIN NAVIGATION BAR (PSGIM) -->
-  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-xs">
+  <!-- MAIN NAVIGATION BAR (PSGIM - Static top header, does not scroll down) -->
+  <header class="relative z-20 bg-white border-b border-slate-200/90 shadow-xs">
     <div class="max-w-7xl mx-auto px-3 sm:px-6 h-[80px] sm:h-[100px] flex items-center justify-between gap-3">
       
       <!-- Official Brand Logo: PSG Institute of Management -->
@@ -154,8 +154,8 @@
     </div>
   </section>
 
-  <!-- STICKY THUMB-FRIENDLY CONTROLS & YEAR SELECTOR -->
-  <div class="sticky top-[80px] sm:top-[100px] z-30 bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-xs">
+  <!-- STICKY THUMB-FRIENDLY CONTROLS & YEAR SELECTOR (Sticks to top-0 when scrolling) -->
+  <div class="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-xs">
     
     <!-- Mobile Search Input -->
     <div class="max-w-7xl mx-auto px-3 sm:px-6 pt-3 pb-2">
@@ -953,7 +953,7 @@ if (typeof module !== 'undefined' && module.exports) {
       sortedYears.forEach(yr => {
         const list = grouped[yr];
         html += `
-          <div id="year-section-${yr}" class="scroll-mt-40">
+          <div id="year-section-${yr}" class="scroll-mt-32">
             
             <!-- Sticky Year Header on Mobile -->
             <div class="flex items-center justify-between mb-3 pt-2">
