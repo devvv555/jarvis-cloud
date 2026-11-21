@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <title>Distinguished Alumni — Year by Year | PSG Institute of Management</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            psg: {
+              navy: '#002147',
+              navyDark: '#00132b',
+              navyLight: '#0d325e',
+              gold: '#D4AF37',
+              goldLight: '#F5E08F',
+              goldDark: '#AA820A',
+              amber: '#FFB606',
+              accent: '#E6A303',
+            }
+          },
+          fontFamily: {
+            cinzel: ['Cinzel', 'serif'],
+            playfair: ['Playfair Display', 'serif'],
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Smooth mobile ergonomics */
+    html {
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .pb-safe {
+      padding-bottom: env(safe-area-inset-bottom, 16px);
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(100%); }
+      to { transform: translateY(0); }
+    }
+    .animate-slide-up {
+      animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 font-sans antialiased min-h-screen flex flex-col pb-20 md:pb-0">
+
+  <!-- TOP CENTENARY ANNOUNCEMENT -->
+  <div class="bg-psg-navyDark text-white py-1 px-3 text-[11px] text-center border-b border-psg-gold/30 flex items-center justify-center gap-2 font-medium">
+    <img src="assets/psg-centenary-100-logo.png" alt="100 Years" class="h-4 w-auto object-contain bg-white/90 rounded px-1" />
+    <span class="text-psg-goldLight font-bold">1926–2026:</span>
+    <span class="truncate">Celebrating 100 Years of PSG &amp; Sons' Charities</span>
+  </div>
+
+  <!-- MAIN NAVIGATION BAR (MOBILE OPTIMIZED) -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-xs">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-2">
+      
+      <!-- Logo & Centenary Emblem -->
+      <a href="#" class="flex items-center gap-2.5 shrink-0">
+        <!-- 100 Centenary Official Logo -->
+        <div class="h-9 sm:h-11 w-auto bg-white rounded-lg p-0.5 border border-slate-200 flex items-center justify-center shadow-2xs">
+          <img src="assets/psg-centenary-100-logo.png" alt="PSG Centenary 100 Years" class="h-full w-auto object-contain" />
+        </div>
+        
+        <div class="leading-tight">
+          <div class="flex items-center gap-1.5">
+            <span class="font-cinzel font-bold text-base sm:text-lg text-psg-navy tracking-tight">PSGMAA</span>
+            <span class="text-[9px] px-1.5 py-0.2 rounded bg-amber-100 text-amber-900 font-bold border border-amber-300">
+              Inception
+            </span>
+          </div>
+          <p class="text-[10px] text-slate-500 font-medium truncate max-w-[170px] sm:max-w-none">
+            PSG Institute of Management
+          </p>
+        </div>
+      </a>
+
+      <!-- Quick Action Buttons -->
+      <div class="flex items-center gap-1.5 sm:gap-2">
+        <a href="#event-banner" class="px-2.5 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-600 text-white text-[11px] font-bold shadow-xs flex items-center gap-1 transition-colors active:scale-95">
+          <i data-lucide="store" class="w-3.5 h-3.5"></i>
+          <span>Expo 2026</span>
+        </a>
+
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdT4mQf0zs5DxrNSZ2t0x_9zQcfcCl_z7arVwRRrrWWifpGdA/viewform?vc=0&c=0&w=1&flr=0" 
+           target="_blank"
+           class="px-2.5 py-1.5 rounded-lg bg-psg-navy hover:bg-psg-navyDark text-white text-[11px] font-bold shadow-xs flex items-center gap-1 transition-colors active:scale-95">
+          <i data-lucide="user-plus" class="w-3.5 h-3.5 text-psg-amber"></i>
+          <span class="hidden xs:inline">Nominate</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION WITH ARCHITECTURAL WATERMARK (1926 HISTORIC BUILDING) -->
+  <section class="relative bg-psg-navyDark text-white px-3 sm:px-6 pt-7 pb-10 sm:py-16 overflow-hidden">
+    
+    <!-- WATERMARK: Historic 1926 Building in background -->
+    <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+      <img 
+        src="assets/psg-heritage-building-1926.png" 
+        alt="" 
+        class="w-full h-full object-cover object-center opacity-15 mix-blend-luminosity filter blur-[0.3px] scale-105"
+      />
+      <!-- Gradient overlay for perfect contrast -->
+      <div class="absolute inset-0 bg-gradient-to-b from-psg-navyDark/90 via-psg-navy/95 to-slate-900/98"></div>
+    </div>
+
+    <!-- WATERMARK: Large Centenary 100 Logo in top-right background -->
+    <div class="absolute -right-10 -top-10 w-72 sm:w-96 h-72 sm:h-96 pointer-events-none opacity-[0.06] z-0">
+      <img src="assets/psg-centenary-100-logo.png" alt="" class="w-full h-full object-contain filter invert" />
+    </div>
+
+    <div class="max-w-6xl mx-auto relative z-10 text-center">
+      
+      <!-- Centenary Badge with Logo -->
+      <div class="flex items-center justify-center mb-4">
+        <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-psg-gold/40 shadow-inner">
+          <img src="assets/psg-centenary-100-logo.png" alt="PSG 100" class="h-5 w-auto bg-white rounded px-1" />
+          <span class="text-psg-goldLight text-[11px] sm:text-xs font-bold tracking-wide uppercase">
+            100 Years of Industrial &amp; Educational Heritage (1926–2026)
+          </span>
+        </div>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="font-cinzel text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-2 leading-tight">
+        Distinguished Alumni <br class="sm:hidden">
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-psg-goldLight via-psg-amber to-amber-200">
+          Year by Year
+        </span>
+      </h1>
+      
+      <p class="text-xs sm:text-sm text-slate-300 font-light leading-relaxed max-w-xl mx-auto mb-6">
+        Honoring 36 exemplary laureates from inception to the Centenary across 24 editions (2003–2026).
+      </p>
+
+      <!-- 3-IMAGE HERITAGE STRIP WITH SOFT SHADOW -->
+      <div class="grid grid-cols-3 gap-2 sm:gap-4 max-w-4xl mx-auto mb-6">
+        
+        <!-- Image 1: 1926 Historic Building -->
+        <div class="group relative rounded-xl sm:rounded-2xl overflow-hidden bg-slate-800 border border-white/20 shadow-lg">
+          <div class="aspect-[4/3] sm:aspect-[16/10] overflow-hidden">
+            <img src="assets/psg-heritage-building-1926.png" alt="1926 Historic Institute" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent flex flex-col justify-end p-2 sm:p-3 text-left">
+            <span class="text-[9px] sm:text-[10px] text-psg-amber font-bold uppercase tracking-wider">Heritage &bull; 1926</span>
+            <div class="text-[10px] sm:text-xs font-semibold text-white truncate">PSG Industrial Institute</div>
+          </div>
+        </div>
+
+        <!-- Image 2: Iconic White Dome Gate -->
+        <div class="group relative rounded-xl sm:rounded-2xl overflow-hidden bg-slate-800 border border-psg-gold/50 shadow-lg ring-1 ring-psg-amber/30">
+          <div class="aspect-[4/3] sm:aspect-[16/10] overflow-hidden">
+            <img src="assets/psg-im-dome-entrance.png" alt="PSG Institute of Management Dome" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent flex flex-col justify-end p-2 sm:p-3 text-left">
+            <span class="text-[9px] sm:text-[10px] text-psg-goldLight font-bold uppercase tracking-wider">Gateway</span>
+            <div class="text-[10px] sm:text-xs font-semibold text-white truncate">PSG IM Dome Entrance</div>
+          </div>
+        </div>
+
+        <!-- Image 3: Modern Campus Aerial -->
+        <div class="group relative rounded-xl sm:rounded-2xl overflow-hidden bg-slate-800 border border-white/20 shadow-lg">
+          <div class="aspect-[4/3] sm:aspect-[16/10] overflow-hidden">
+            <img src="assets/psg-im-campus-aerial.png" alt="Modern PSG IM Campus" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent flex flex-col justify-end p-2 sm:p-3 text-left">
+            <span class="text-[9px] sm:text-[10px] text-psg-amber font-bold uppercase tracking-wider">Excellence</span>
+            <div class="text-[10px] sm:text-xs font-semibold text-white truncate">Modern PSG IM Campus</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quick Metrics Ribbon (4 columns on mobile) -->
+      <div class="grid grid-cols-4 gap-1 sm:gap-3 max-w-lg mx-auto bg-white/10 backdrop-blur-md p-2 rounded-2xl border border-white/10 text-center">
+        <div class="p-1">
+          <div class="font-cinzel text-base sm:text-2xl font-bold text-psg-amber leading-none mb-0.5">36</div>
+          <div class="text-[9px] sm:text-[10px] text-slate-300 uppercase">Laureates</div>
+        </div>
+        <div class="p-1 border-l border-white/10">
+          <div class="font-cinzel text-base sm:text-2xl font-bold text-white leading-none mb-0.5">24</div>
+          <div class="text-[9px] sm:text-[10px] text-slate-300 uppercase">Editions</div>
+        </div>
+        <div class="p-1 border-l border-white/10">
+          <div class="font-cinzel text-base sm:text-2xl font-bold text-psg-goldLight leading-none mb-0.5">7+</div>
+          <div class="text-[9px] sm:text-[10px] text-slate-300 uppercase">Sectors</div>
+        </div>
+        <div class="p-1 border-l border-white/10">
+          <div class="font-cinzel text-base sm:text-2xl font-bold text-amber-300 leading-none mb-0.5">100y</div>
+          <div class="text-[9px] sm:text-[10px] text-slate-300 uppercase">Centenary</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EVENT SPOTLIGHT WITH CENTENARY WATERMARK -->
+  <section id="event-banner" class="max-w-7xl mx-auto px-3 sm:px-6 -mt-3 relative z-20">
+    <div class="relative bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 rounded-2xl p-4 sm:p-5 text-white shadow-xl border border-amber-300/40 overflow-hidden">
+      
+      <!-- WATERMARK: Large 100 Centenary Logo in card background -->
+      <div class="absolute -right-6 -bottom-8 w-60 sm:w-80 h-60 sm:h-80 pointer-events-none opacity-20 filter invert brightness-200">
+        <img src="assets/psg-centenary-100-logo.png" alt="" class="w-full h-full object-contain object-right-bottom transform rotate-6" />
+      </div>
+
+      <div class="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        
+        <div class="flex items-start gap-3">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-white p-1 shrink-0 flex items-center justify-center shadow-xs border border-amber-200">
+            <img src="assets/psg-centenary-100-logo.png" alt="PSG 100" class="h-full w-auto object-contain" />
+          </div>
+
+          <div>
+            <div class="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider bg-black/20 text-amber-100 px-2 py-0.5 rounded-full w-max mb-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-300 animate-ping"></span>
+              9–13 Dec, 2026 &bull; CODISSIA, Coimbatore
+            </div>
+            <h2 class="text-sm sm:text-lg font-cinzel font-bold text-white leading-snug">
+              PRODUCTS OF PSG PRODUCTS
+            </h2>
+            <p class="text-[11px] sm:text-xs text-amber-100 mt-0.5 line-clamp-2">
+              The Largest Alumni Enterprise Exhibition celebrating 100 years of PSG &amp; Sons' Charities with 1,000+ stalls.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2 w-full sm:w-auto shrink-0 pt-1 sm:pt-0 relative z-10">
+          <a href="https://psgproducts.org" target="_blank" class="flex-1 sm:flex-none text-center px-3 py-2 rounded-xl bg-psg-navy hover:bg-psg-navyDark text-white text-xs font-bold shadow-xs active:scale-95 transition-all">
+            Exhibitor Registration
+          </a>
+          <a href="https://psgproducts.org" target="_blank" class="flex-1 sm:flex-none text-center px-3 py-2 rounded-xl bg-white hover:bg-slate-100 text-psg-navyDark text-xs font-bold shadow-xs active:scale-95 transition-all">
+            Visitor Pass
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STICKY THUMB-FRIENDLY CONTROLS & YEAR SELECTOR -->
+  <div class="sticky top-14 sm:top-16 z-30 bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-xs">
+    
+    <!-- Mobile Search Input -->
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 pt-3 pb-2">
+      <div class="relative flex items-center">
+        <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+        <input 
+          type="text" 
+          id="search-input" 
+          oninput="handleSearch(this.value)"
+          placeholder="Search alumnus, company, batch, or year..." 
+          class="w-full pl-9 pr-8 py-2 rounded-xl bg-slate-100 border border-slate-200 focus:bg-white focus:border-psg-navy focus:ring-2 focus:ring-psg-navy/10 text-xs sm:text-sm outline-none transition-all placeholder:text-slate-400"
+        />
+        <button id="clear-search-btn" onclick="clearSearch()" class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center text-xs">
+          ✕
+        </button>
+      </div>
+    </div>
+
+    <!-- Horizontal Swipeable Year Navigation Ribbon -->
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 pb-2">
+      <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar scroll-smooth py-0.5" id="year-scroll-track">
+        <button onclick="filterByYear('all')" data-year="all" class="year-pill active shrink-0 px-3 py-1.5 rounded-xl text-xs font-bold transition-all bg-psg-navy text-white shadow-xs">
+          All Years (36)
+        </button>
+        <!-- Populated via script: 2026, 2025, 2024 ... 2003 -->
+      </div>
+    </div>
+
+    <!-- Horizontal Swipeable Domain Filter Chips -->
+    <div class="bg-slate-50 border-t border-slate-100 px-3 sm:px-6 py-2">
+      <div class="max-w-7xl mx-auto flex items-center gap-1.5 overflow-x-auto no-scrollbar" id="sector-chips-track">
+        <button onclick="filterBySector('all')" data-sector="all" class="sector-chip active shrink-0 px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-white border border-slate-300 text-slate-800 shadow-2xs">
+          All Domains
+        </button>
+        <button onclick="filterBySector('Manufacturing & Infrastructure')" data-sector="Manufacturing & Infrastructure" class="sector-chip shrink-0 px-2.5 py-1 rounded-lg text-[11px] font-medium bg-white/70 border border-slate-200 text-slate-600">
+          Manufacturing (10)
+        </button>
+        <button onclick="filterBySector('Retail, FMCG & Textiles')" data-sector="Retail, FMCG & Textiles" class="sector-chip shrink-0 px-2.5 py-1 rounded-lg text-[11px] font-medium bg-white/70 border border-slate-200 text-slate-600">
+          Retail &amp; Textiles (5)
+        </button>
+        <button onclick="filterBySector('Public Service & Governance')" data-sector="Public Service & Governance" class="sector-chip shrink-0 px-2.5 py-1 rounded-lg text-[11px] font-medium bg-white/70 border border-slate-200 text-slate-600">
+          Public Service (6)
+        </button>
+        <button onclick="filterBySector('Finance & Corporate Leadership')" data-sector="Finance & Corporate Leadership" class="sector-chip shrink-0 px-2.5 py-1 rounded-lg text-[11px] font-medium bg-white/70 border border-slate-200 text-slate-600">
+          Finance &amp; Banking (4)
+        </button>
+        <button onclick="filterBySector('Technology & Digital')" data-sector="Technology & Digital" class="sector-chip shrink-0 px-2.5 py-1 rounded-lg text-[11px] font-medium bg-white/70 border border-slate-200 text-slate-600">
+          Technology (3)
+        </button>
+        <button onclick="filterBySector('Education & Academia')" data-sector="Education & Academia" class="sector-chip shrink-0 px-2.5 py-1 rounded-lg text-[11px] font-medium bg-white/70 border border-slate-200 text-slate-600">
+          Education (3)
+        </button>
+        <button onclick="filterBySector('Media, Sports & Entertainment')" data-sector="Media, Sports & Entertainment" class="sector-chip shrink-0 px-2.5 py-1 rounded-lg text-[11px] font-medium bg-white/70 border border-slate-200 text-slate-600">
+          Media &amp; Sports (2)
+        </button>
+      </div>
+    </div>
+
+    <!-- Active Count & Reset -->
+    <div class="px-3 sm:px-6 py-1.5 flex items-center justify-between text-[11px] text-slate-500 border-t border-slate-100 bg-white">
+      <div>
+        Showing <strong class="text-psg-navy font-bold" id="filtered-count">36</strong> of 36 alumni
+        <span id="active-year-label" class="ml-1 text-slate-400"></span>
+      </div>
+      <button onclick="resetAllFilters()" id="reset-btn" class="hidden text-rose-600 font-semibold flex items-center gap-1 active:scale-95">
+        <i data-lucide="rotate-ccw" class="w-3 h-3"></i> Reset Filters
+      </button>
+    </div>
+
+  </div>
+
+  <!-- MAIN ALUMNI LIST CONTAINER (CARDS WITH WATERMARKS) -->
+  <main class="flex-grow max-w-7xl mx-auto px-3 sm:px-6 py-4 w-full">
+    <div id="alumni-display-container">
+      <!-- Populated dynamically via JavaScript -->
+    </div>
+  </main>
+
+  <!-- NOMINATION GUIDELINES WITH WATERMARK & CAMPUS PHOTO -->
+  <section class="max-w-7xl mx-auto px-3 sm:px-6 py-6">
+    <div class="relative bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs">
+      
+      <!-- Top banner image with dome entrance -->
+      <div class="relative h-36 sm:h-48 w-full overflow-hidden bg-slate-900">
+        <img src="assets/psg-im-dome-entrance.png" alt="PSG Institute of Management" class="w-full h-full object-cover object-center opacity-70" />
+        <div class="absolute inset-0 bg-gradient-to-t from-psg-navyDark via-psg-navyDark/60 to-transparent flex flex-col justify-end p-4 sm:p-6 text-white">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="w-6 h-6 rounded-md bg-psg-gold text-psg-navyDark flex items-center justify-center font-bold text-xs">
+              ★
+            </span>
+            <span class="font-cinzel text-sm sm:text-lg font-bold text-white">PSG Institute of Management</span>
+          </div>
+          <p class="text-xs text-psg-goldLight font-medium">
+            Nomination Guidelines &bull; Distinguished Alumni Awards
+          </p>
+        </div>
+      </div>
+
+      <!-- Content Area with Modern Campus Watermark -->
+      <div class="relative p-4 sm:p-6">
+        
+        <!-- Subtle Campus Watermark in bottom corner -->
+        <div class="absolute right-0 bottom-0 w-80 h-80 pointer-events-none opacity-[0.05] z-0 overflow-hidden">
+          <img src="assets/psg-im-campus-aerial.png" alt="" class="w-full h-full object-cover" />
+        </div>
+
+        <p class="relative z-10 text-xs text-slate-500 mb-4">
+          Conferred annually to honor outstanding leadership, innovation, and service. Preferred age category: 45 to 55 years.
+        </p>
+
+        <div class="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs text-slate-600 mb-6">
+          <div class="p-3 rounded-xl bg-slate-50/90 border border-slate-100">
+            <strong class="text-slate-900 block mb-1">1. Technology &amp; Innovation</strong>
+            Patents, design breakthroughs, publications, and technical leadership.
+          </div>
+          <div class="p-3 rounded-xl bg-slate-50/90 border border-slate-100">
+            <strong class="text-slate-900 block mb-1">2. Corporate Leadership</strong>
+            Executive roles, board appointments, global stature, and institutional mentorship.
+          </div>
+          <div class="p-3 rounded-xl bg-slate-50/90 border border-slate-100">
+            <strong class="text-slate-900 block mb-1">3. Entrepreneurial Scale</strong>
+            Founding impactful enterprises, scaling market presence, and creating economic value.
+          </div>
+          <div class="p-3 rounded-xl bg-slate-50/90 border border-slate-100">
+            <strong class="text-slate-900 block mb-1">4. Public Service</strong>
+            Civil services, public administration, policy, media, and societal contributions.
+          </div>
+          <div class="p-3 rounded-xl bg-slate-50/90 border border-slate-100">
+            <strong class="text-slate-900 block mb-1">5. Academic Honours</strong>
+            Citations, research index, visiting professorships, and scholarly distinctions.
+          </div>
+          <div class="p-3 rounded-xl bg-slate-50/90 border border-slate-100">
+            <strong class="text-slate-900 block mb-1">6. Official Queries</strong>
+            Email: <a href="mailto:distinguishedalumni@psgim.ac.in" class="text-psg-navy font-semibold underline">distinguishedalumni@psgim.ac.in</a>
+          </div>
+        </div>
+
+        <div class="relative z-10 text-center sm:text-left">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdT4mQf0zs5DxrNSZ2t0x_9zQcfcCl_z7arVwRRrrWWifpGdA/viewform?vc=0&c=0&w=1&flr=0" 
+             target="_blank"
+             class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-3 rounded-xl bg-psg-navy text-white text-xs font-bold shadow-xs hover:bg-psg-navyDark transition-all active:scale-95">
+            <i data-lucide="file-check-2" class="w-4 h-4 text-psg-amber"></i>
+            <span>Submit Nomination Online</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MOBILE BOTTOM SHEET MODAL (WITH WATERMARK) -->
+  <div id="alumni-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-xs flex items-end sm:items-center justify-center">
+    
+    <!-- Dialog Sheet Container -->
+    <div class="relative bg-white rounded-t-3xl sm:rounded-2xl max-w-lg w-full max-h-[88vh] overflow-y-auto shadow-2xl border-t sm:border border-slate-200 animate-slide-up p-5 sm:p-6 pb-safe overflow-hidden">
+      
+      <!-- WATERMARK: Dome Entrance inside Modal Background -->
+      <div class="absolute right-0 bottom-0 w-64 h-64 pointer-events-none opacity-[0.06] z-0 overflow-hidden">
+        <img src="assets/psg-im-dome-entrance.png" alt="" class="w-full h-full object-contain object-bottom-right" />
+      </div>
+
+      <!-- Drag handle indicator for mobile sheet -->
+      <div class="w-12 h-1 bg-slate-300 rounded-full mx-auto mb-4 sm:hidden"></div>
+
+      <!-- Close button -->
+      <button onclick="closeModal()" class="absolute right-4 top-4 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition-colors z-20">
+        ✕
+      </button>
+
+      <!-- Injected modal body -->
+      <div id="modal-content" class="relative z-10"></div>
+
+    </div>
+  </div>
+
+  <!-- FIXED MOBILE BOTTOM QUICK BAR (THUMB OPERATION) -->
+  <div class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 px-4 py-2 pb-safe flex items-center justify-around text-[10px] font-semibold text-slate-600 shadow-lg">
+    
+    <button onclick="scrollToTop()" class="flex flex-col items-center gap-0.5 active:scale-95 text-psg-navy">
+      <i data-lucide="arrow-up" class="w-4 h-4 text-psg-navy"></i>
+      <span>Top</span>
+    </button>
+
+    <button onclick="focusSearch()" class="flex flex-col items-center gap-0.5 active:scale-95">
+      <i data-lucide="search" class="w-4 h-4"></i>
+      <span>Search</span>
+    </button>
+
+    <button onclick="quickJumpYear()" class="flex flex-col items-center gap-0.5 active:scale-95 text-amber-600 font-bold">
+      <i data-lucide="calendar" class="w-4 h-4 text-amber-600"></i>
+      <span>Years</span>
+    </button>
+
+    <a href="#event-banner" class="flex flex-col items-center gap-0.5 active:scale-95">
+      <i data-lucide="store" class="w-4 h-4 text-amber-500"></i>
+      <span>Expo</span>
+    </a>
+
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdT4mQf0zs5DxrNSZ2t0x_9zQcfcCl_z7arVwRRrrWWifpGdA/viewform?vc=0&c=0&w=1&flr=0" target="_blank" class="flex flex-col items-center gap-0.5 active:scale-95">
+      <i data-lucide="user-plus" class="w-4 h-4"></i>
+      <span>Nominate</span>
+    </a>
+
+  </div>
+
+  <!-- FOOTER WITH CENTENARY WATERMARK -->
+  <footer class="relative bg-slate-900 text-slate-400 py-10 text-xs border-t border-slate-800 overflow-hidden">
+    
+    <!-- WATERMARK in Footer -->
+    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 pointer-events-none opacity-[0.04]">
+      <img src="assets/psg-centenary-100-logo.png" alt="" class="w-full h-full object-contain filter invert" />
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 text-center space-y-3 relative z-10">
+      
+      <div class="flex items-center justify-center gap-2">
+        <img src="assets/psg-centenary-100-logo.png" alt="PSG 100" class="h-6 w-auto bg-white rounded p-0.5" />
+        <div class="font-cinzel font-bold text-white text-sm">
+          PSG Institute of Management Alumni Association
+        </div>
+      </div>
+
+      <p class="text-[11px] text-slate-500 max-w-md mx-auto">
+        Celebrating 100 Years of PSG &amp; Sons' Charities (1926–2026) &bull; PRODUCTS OF PSG Exhibition Dec 9–13, 2026 @ CODISSIA.
+      </p>
+
+      <div class="pt-2 text-[10px] text-slate-600 flex items-center justify-center gap-4">
+        <span>&copy; 2026 PSGMAA</span>
+        <span>&bull;</span>
+        <a href="https://psgmaa.com" target="_blank" class="hover:text-slate-400">psgmaa.com</a>
+        <span>&bull;</span>
+        <a href="https://psgproducts.org" target="_blank" class="hover:text-slate-400">psgproducts.org</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT: DATASET -->
+  <script src="alumni-data.js"></script>
+
+  <!-- SCRIPT: APP CONTROLLER -->
+  <script>
+    // State
+    let selectedYear = 'all';
+    let selectedSector = 'all';
+    let searchQuery = '';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initYearPills();
+      renderAlumni();
+      lucide.createIcons();
+    });
+
+    // Unique sorted years
+    function getUniqueYears() {
+      const years = Array.from(new Set(ALUMNI_DATA.map(a => a.year))).filter(Boolean);
+      return years.sort((a, b) => b - a);
+    }
+
+    // Initialize Year Navigation Pills
+    function initYearPills() {
+      const track = document.getElementById('year-scroll-track');
+      const years = getUniqueYears();
+
+      years.forEach(yr => {
+        const count = ALUMNI_DATA.filter(a => a.year === yr).length;
+        const btn = document.createElement('button');
+        btn.onclick = () => filterByYear(yr);
+        btn.setAttribute('data-year', yr);
+        btn.className = 'year-pill shrink-0 px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 active:scale-95 transition-all';
+        btn.innerHTML = `${yr} <span class="text-[10px] opacity-70">(${count})</span>`;
+        track.appendChild(btn);
+      });
+    }
+
+    // Filter Year
+    function filterByYear(yr) {
+      selectedYear = yr;
+      
+      document.querySelectorAll('.year-pill').forEach(pill => {
+        const pYear = pill.getAttribute('data-year');
+        if (pYear == yr) {
+          pill.className = 'year-pill active shrink-0 px-3 py-1.5 rounded-xl text-xs font-bold bg-psg-navy text-white shadow-xs';
+          pill.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        } else {
+          pill.className = 'year-pill shrink-0 px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700';
+        }
+      });
+
+      const label = document.getElementById('active-year-label');
+      if (label) {
+        label.textContent = yr === 'all' ? '' : `in Year ${yr}`;
+      }
+
+      renderAlumni();
+    }
+
+    // Filter Sector
+    function filterBySector(sector) {
+      selectedSector = sector;
+
+      document.querySelectorAll('.sector-chip').forEach(chip => {
+        const s = chip.getAttribute('data-sector');
+        if (s === sector) {
+          chip.className = 'sector-chip active shrink-0 px-2.5 py-1 rounded-lg text-[11px] font-bold bg-psg-navy text-white shadow-xs';
+          chip.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        } else {
+          chip.className = 'sector-chip shrink-0 px-2.5 py-1 rounded-lg text-[11px] font-medium bg-white/70 border border-slate-200 text-slate-600';
+        }
+      });
+
+      renderAlumni();
+    }
+
+    // Search
+    function handleSearch(val) {
+      searchQuery = val.trim().toLowerCase();
+      document.getElementById('clear-search-btn').classList.toggle('hidden', searchQuery.length === 0);
+      renderAlumni();
+    }
+
+    function clearSearch() {
+      document.getElementById('search-input').value = '';
+      searchQuery = '';
+      document.getElementById('clear-search-btn').classList.add('hidden');
+      renderAlumni();
+    }
+
+    function resetAllFilters() {
+      selectedYear = 'all';
+      selectedSector = 'all';
+      searchQuery = '';
+      document.getElementById('search-input').value = '';
+      document.getElementById('clear-search-btn').classList.add('hidden');
+      filterByYear('all');
+      filterBySector('all');
+    }
+
+    function focusSearch() {
+      const input = document.getElementById('search-input');
+      input.focus();
+      input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function quickJumpYear() {
+      const track = document.getElementById('year-scroll-track');
+      track.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // Filter Computation
+    function getFilteredList() {
+      return ALUMNI_DATA.filter(item => {
+        if (selectedYear !== 'all' && item.year != selectedYear) return false;
+        if (selectedSector !== 'all' && item.sector !== selectedSector) return false;
+        if (searchQuery) {
+          const haystack = `${item.name} ${item.position} ${item.description} ${item.company} ${item.batch} ${item.year}`.toLowerCase();
+          if (!haystack.includes(searchQuery)) return false;
+        }
+        return true;
+      });
+    }
+
+    // Sector badge style
+    function getSectorBadge(sector) {
+      switch(sector) {
+        case 'Manufacturing & Infrastructure':
+          return 'bg-blue-50 text-blue-700 border-blue-200';
+        case 'Retail, FMCG & Textiles':
+          return 'bg-emerald-50 text-emerald-700 border-emerald-200';
+        case 'Public Service & Governance':
+          return 'bg-purple-50 text-purple-700 border-purple-200';
+        case 'Finance & Corporate Leadership':
+          return 'bg-amber-50 text-amber-700 border-amber-200';
+        case 'Technology & Digital':
+          return 'bg-cyan-50 text-cyan-700 border-cyan-200';
+        case 'Education & Academia':
+          return 'bg-indigo-50 text-indigo-700 border-indigo-200';
+        case 'Media, Sports & Entertainment':
+          return 'bg-rose-50 text-rose-700 border-rose-200';
+        default:
+          return 'bg-slate-50 text-slate-700 border-slate-200';
+      }
+    }
+
+    // Render logic
+    function renderAlumni() {
+      const filtered = getFilteredList();
+      const container = document.getElementById('alumni-display-container');
+      
+      document.getElementById('filtered-count').textContent = filtered.length;
+      const isFiltered = (selectedYear !== 'all' || selectedSector !== 'all' || searchQuery.length > 0);
+      document.getElementById('reset-btn').classList.toggle('hidden', !isFiltered);
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="bg-white rounded-2xl p-8 text-center border border-slate-200 my-6">
+            <div class="w-12 h-12 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center mx-auto mb-3">
+              <i data-lucide="search-x" class="w-6 h-6"></i>
+            </div>
+            <div class="font-bold text-sm text-slate-800 mb-1">No Alumni Found</div>
+            <p class="text-xs text-slate-500 mb-4">No laureates match your active search or filter.</p>
+            <button onclick="resetAllFilters()" class="px-4 py-2 rounded-xl bg-psg-navy text-white text-xs font-semibold">
+              Reset Filters
+            </button>
+          </div>
+        `;
+        lucide.createIcons();
+        return;
+      }
+
+      // Group by year
+      const grouped = {};
+      filtered.forEach(a => {
+        const y = a.year || 'Legacy';
+        if (!grouped[y]) grouped[y] = [];
+        grouped[y].push(a);
+      });
+
+      const sortedYears = Object.keys(grouped).sort((a, b) => b - a);
+
+      let html = `<div class="space-y-6">`;
+
+      sortedYears.forEach(yr => {
+        const list = grouped[yr];
+        html += `
+          <div id="year-section-${yr}" class="scroll-mt-40">
+            
+            <!-- Sticky Year Header on Mobile -->
+            <div class="flex items-center justify-between mb-3 pt-2">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-psg-amber"></span>
+                <h3 class="font-cinzel text-lg sm:text-xl font-bold text-psg-navy">
+                  Award Year ${yr}
+                </h3>
+                <span class="text-[11px] px-2 py-0.5 rounded-full bg-slate-200 text-slate-700 font-semibold">
+                  ${list.length} ${list.length === 1 ? 'Honoree' : 'Honorees'}
+                </span>
+              </div>
+              <div class="text-[10px] text-slate-400 font-medium">
+                DA ${yr}
+              </div>
+            </div>
+
+            <!-- Mobile-first Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+              ${list.map(a => renderMobileCard(a)).join('')}
+            </div>
+
+          </div>
+        `;
+      });
+
+      html += `</div>`;
+      container.innerHTML = html;
+      lucide.createIcons();
+    }
+
+    // Render single mobile-optimized card with subtle Centenary Watermark
+    function renderMobileCard(a) {
+      const badgeStyle = getSectorBadge(a.sector);
+      const initials = a.name.replace(/^(Mr\.|Ms\.|Mrs\.|Dr\.)\s*/i, '').split(' ').map(n => n[0]).slice(0, 2).join('');
+
+      return `
+        <div class="relative group bg-white rounded-2xl p-3.5 border border-slate-200/90 shadow-2xs hover:shadow-md transition-all active:bg-slate-50/50 flex flex-col justify-between cursor-pointer overflow-hidden" onclick="openModal(${a.id})">
+          
+          <!-- WATERMARK: Subtle Centenary Crest in top-right of every card -->
+          <div class="absolute -right-4 -top-4 w-20 h-20 opacity-[0.05] group-hover:opacity-[0.10] transition-opacity pointer-events-none">
+            <img src="assets/psg-centenary-100-logo.png" alt="" class="w-full h-full object-contain" />
+          </div>
+
+          <div class="relative z-10 flex items-start gap-3">
+            
+            <!-- Alumnus Image (Touch-friendly 68px) -->
+            <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden bg-slate-100 border border-slate-200 shrink-0 relative">
+              <img 
+                src="${a.image}" 
+                alt="${a.name}" 
+                class="w-full h-full object-cover object-top"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <div class="w-full h-full hidden items-center justify-center bg-gradient-to-br from-psg-navy to-slate-800 text-psg-gold font-cinzel font-bold text-sm">
+                ${initials}
+              </div>
+            </div>
+
+            <!-- Alumnus Info -->
+            <div class="flex-1 min-w-0">
+              
+              <!-- Badges Row -->
+              <div class="flex items-center gap-1.5 flex-wrap mb-1">
+                <span class="text-[10px] font-bold px-1.5 py-0.2 rounded bg-amber-100 text-amber-900 border border-amber-300">
+                  DA ${a.year}
+                </span>
+                ${a.batch ? `
+                  <span class="text-[9px] font-semibold px-1.5 py-0.2 rounded bg-slate-100 text-slate-700">
+                    ${a.batch}
+                  </span>
+                ` : ''}
+              </div>
+
+              <!-- Name -->
+              <h4 class="font-bold text-sm text-psg-navy leading-snug line-clamp-1">
+                ${a.name}
+              </h4>
+
+              <!-- Designation & Company -->
+              <p class="text-[11px] text-slate-600 line-clamp-2 mt-0.5 leading-snug">
+                ${a.position}
+              </p>
+
+            </div>
+
+          </div>
+
+          <!-- Bottom Micro Bar -->
+          <div class="relative z-10 mt-2.5 pt-2 border-t border-slate-100 flex items-center justify-between text-[10px]">
+            <span class="font-semibold px-1.5 py-0.5 rounded border ${badgeStyle} truncate max-w-[170px]">
+              ${a.sector}
+            </span>
+            <span class="text-psg-navy font-bold flex items-center gap-0.5 text-[11px] text-amber-700">
+              <span>View Profile</span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </span>
+          </div>
+
+        </div>
+      `;
+    }
+
+    // Modal Drawer logic (Bottom sheet on phone with watermark)
+    function openModal(id) {
+      const a = ALUMNI_DATA.find(item => item.id === id);
+      if (!a) return;
+
+      const modal = document.getElementById('alumni-modal');
+      const content = document.getElementById('modal-content');
+      const badgeStyle = getSectorBadge(a.sector);
+
+      content.innerHTML = `
+        <div class="text-center sm:text-left">
+          
+          <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 mb-4">
+            
+            <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden bg-slate-100 border-2 border-psg-gold shadow-md shrink-0">
+              <img src="${a.image}" alt="${a.name}" class="w-full h-full object-cover object-top" onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(a.name)}&background=002147&color=D4AF37'" />
+            </div>
+
+            <div class="flex-1">
+              
+              <div class="flex items-center justify-center sm:justify-start gap-1.5 flex-wrap mb-1.5">
+                <span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 border border-amber-300 font-bold text-xs flex items-center gap-1">
+                  <i data-lucide="award" class="w-3 h-3 text-amber-700"></i> Awardee ${a.year}
+                </span>
+                ${a.batch ? `
+                  <span class="px-2 py-0.5 rounded-full bg-psg-navy text-white text-xs font-semibold">
+                    ${a.batch}
+                  </span>
+                ` : ''}
+              </div>
+
+              <h2 class="font-cinzel text-lg sm:text-xl font-bold text-psg-navy leading-tight">
+                ${a.name}
+              </h2>
+
+              <p class="text-xs text-slate-700 font-medium mt-1 leading-snug">
+                ${a.position}
+              </p>
+
+              <div class="mt-2">
+                <span class="text-[10px] uppercase font-bold px-2 py-0.5 rounded border ${badgeStyle}">
+                  ${a.sector}
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Citation Block -->
+          <div class="bg-slate-50/90 rounded-xl p-3.5 border border-slate-100 text-xs text-slate-700 leading-relaxed italic text-left mb-4">
+            &ldquo;Recognized for distinguished accomplishments, exemplary leadership, and significant contribution to industry, academia, and society, bringing immense honor to the PSG Institute of Management.&rdquo;
+          </div>
+
+          <!-- Event Notice in Modal -->
+          <div class="bg-amber-50/90 rounded-xl p-3 border border-amber-200 text-left mb-4 flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-lg bg-amber-500 text-white flex items-center justify-center shrink-0">
+              <i data-lucide="store" class="w-4 h-4"></i>
+            </div>
+            <div class="flex-1 text-[11px] text-amber-900">
+              <strong>Products of PSG Expo 2026:</strong> Dec 9–13 at CODISSIA, Coimbatore celebrating 100 years of alumni enterprise.
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-col sm:flex-row gap-2 pt-2">
+            <button onclick="shareProfile('${encodeURIComponent(a.name)}', ${a.year})" class="w-full py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold flex items-center justify-center gap-1.5 transition-colors active:scale-95">
+              <i data-lucide="share-2" class="w-3.5 h-3.5"></i>
+              <span>Share Honoree</span>
+            </button>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdT4mQf0zs5DxrNSZ2t0x_9zQcfcCl_z7arVwRRrrWWifpGdA/viewform?vc=0&c=0&w=1&flr=0" target="_blank" class="w-full py-2.5 rounded-xl bg-psg-navy text-white text-xs font-bold flex items-center justify-center gap-1.5 hover:bg-psg-navyDark transition-colors active:scale-95">
+              <i data-lucide="user-plus" class="w-3.5 h-3.5 text-psg-amber"></i>
+              <span>Nominate for 2027</span>
+            </a>
+          </div>
+
+        </div>
+      `;
+
+      modal.classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeModal() {
+      document.getElementById('alumni-modal').classList.add('hidden');
+    }
+
+    // Native Web Share API
+    function shareProfile(name, year) {
+      const decodedName = decodeURIComponent(name);
+      if (navigator.share) {
+        navigator.share({
+          title: `${decodedName} — PSG IM Distinguished Alumnus (${year})`,
+          text: `Honoring ${decodedName}, PSG Institute of Management Distinguished Alumnus Awardee (${year}).`,
+          url: window.location.href,
+        }).catch(() => {});
+      } else {
+        navigator.clipboard.writeText(`${decodedName} — PSG IM Distinguished Alumnus (${year}) ${window.location.href}`);
+        alert('Profile link copied to clipboard!');
+      }
+    }
+
+    // Close on outside tap
+    document.getElementById('alumni-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'alumni-modal') closeModal();
+    });
+  </script>
+
+</body>
+</html>
