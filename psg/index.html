@@ -276,11 +276,17 @@
   </div>
 
   <!-- FOOTER: PURE PSG INSTITUTE OF MANAGEMENT -->
-  <footer class="relative bg-slate-900 text-slate-400 pt-10 pb-24 md:pb-12 text-xs border-t border-slate-800 overflow-hidden">
+  <footer class="relative bg-psg-navyDark text-slate-400 pt-10 pb-24 md:pb-12 text-xs border-t border-slate-800 overflow-hidden">
     
-    <!-- WATERMARK in Footer -->
-    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 pointer-events-none opacity-[0.03]">
-      <img src="assets/psg-im-dome-entrance.png" alt="" class="w-full h-full object-contain filter invert" />
+    <!-- FULL-COVER WATERMARK BACKGROUND: 100% Edge-to-Edge Coverage -->
+    <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+      <img 
+        src="assets/psg-im-dome-entrance.png" 
+        alt="" 
+        class="w-full h-full object-cover object-center opacity-10 mix-blend-luminosity filter blur-[0.4px] scale-105" 
+      />
+      <!-- Seamless gradient overlay ensuring 100% full coverage with zero visible seams -->
+      <div class="absolute inset-0 bg-gradient-to-b from-psg-navyDark/95 via-psg-navyDark/90 to-slate-950/98"></div>
     </div>
 
     <div class="max-w-7xl mx-auto px-4 text-center space-y-3 relative z-10">
