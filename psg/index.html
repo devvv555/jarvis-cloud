@@ -637,11 +637,11 @@
       let profileSection = '';
       if (a.profile) {
         profileSection = `
-          <!-- About & Executive Roles -->
+          <!-- About -->
           <div class="bg-slate-50/90 rounded-2xl p-4 border border-slate-200">
             <div class="flex items-center gap-2 mb-2 text-psg-navy font-bold text-xs uppercase tracking-wider">
               <i data-lucide="user-check" class="w-4 h-4 text-amber-600"></i>
-              <span>About &amp; Executive Leadership</span>
+              <span>About</span>
             </div>
             <p class="text-xs text-slate-700 leading-relaxed font-normal">
               ${a.profile.about}
@@ -689,28 +689,6 @@
             </div>
           </div>
 
-          <!-- His Alma Mater — PSGIM -->
-          <div class="bg-amber-50/70 rounded-2xl p-4 border border-amber-200">
-            <div class="flex items-center gap-2 text-amber-900 font-bold text-xs mb-1.5 uppercase tracking-wider">
-              <i data-lucide="graduation-cap" class="w-4 h-4 text-amber-700"></i>
-              <span>His Alma Mater &mdash; PSGIM</span>
-            </div>
-            <p class="text-xs text-slate-800 leading-relaxed">
-              ${a.profile.almamater}
-            </p>
-          </div>
-
-          <!-- Career Path & Entrepreneurship -->
-          <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200">
-            <div class="flex items-center gap-2 text-psg-navy font-bold text-xs mb-1.5 uppercase tracking-wider">
-              <i data-lucide="trending-up" class="w-4 h-4 text-psg-navy"></i>
-              <span>Career Path &amp; Entrepreneurship</span>
-            </div>
-            <p class="text-xs text-slate-700 leading-relaxed">
-              ${a.profile.careerPath}
-            </p>
-          </div>
-
           <!-- Contribution to Society -->
           <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200">
             <div class="flex items-center gap-2 text-psg-navy font-bold text-xs mb-1.5 uppercase tracking-wider">
@@ -735,23 +713,6 @@
               <strong class="text-slate-900">Voice for Youth:</strong> ${a.profile.voiceForYouth}
             </p>
           </div>
-
-          <!-- Faculty Tribute / Dr. R. Nandagopal -->
-          ${a.profile.facultyQuote ? `
-            <div class="bg-gradient-to-br from-psg-navy/10 via-amber-50/50 to-white rounded-2xl p-4 border border-psg-navy/15 text-xs text-slate-800">
-              <div class="flex items-center gap-1.5 text-psg-navy font-bold text-xs mb-2 uppercase tracking-wider">
-                <i data-lucide="quote" class="w-4 h-4 text-amber-600"></i>
-                <span>Faculty Tribute</span>
-              </div>
-              <p class="italic text-xs text-slate-800 leading-relaxed mb-2">
-                &ldquo;${a.profile.facultyQuote.text}&rdquo;
-              </p>
-              <div class="font-bold text-xs text-psg-navy flex items-center gap-1.5">
-                <span>&mdash; ${a.profile.facultyQuote.author}</span>
-                <span class="text-slate-500 font-normal">(${a.profile.facultyQuote.title})</span>
-              </div>
-            </div>
-          ` : ''}
         `;
       }
 

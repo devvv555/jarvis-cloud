@@ -104,16 +104,9 @@ const ALUMNI_DATA = [
           "role": "Chairman · 2012 – 2014"
         }
       ],
-      "almamater": "His time in PSGIM was everything to him. He had an opportunity to be the Chairman of EXE Games 1991 celebrations, Chairman of Silver Jubilee celebrations of PSGIM, and also the Secretary of Management Association of PSGIM for 1990-91. All this helped develop his leadership qualities, which gave him the confidence to lead the organisations that he is heading today.",
-      "careerPath": "When he was doing his project work in PSGIM, the motivation to take up entrepreneurship came from his cousin sister's husband who was in the fertilizer business. At that point in time, he was the only family member who was doing business and under his guidance he set up Universal Pesticides and Chemicals in 1991 in Arasur. He became active in the textile business from 1994 and later in the infrastructure sector.",
       "contribution": "He served as member of Cotton Advisory Board and Cotton Yarn Advisory Board for more than five years, when he worked towards enhancing cotton crop production and forecasting, and yarn exports. He was the Chairman of Arulmigu Masani Amman Temple and Charities, Annamalai, for over four years, during which the temple underwent major renovations at a cost of Rs. 10 crore. He is also a member of Textile Export Promotion Council. They manage two schools that cater to underprivileged children.",
       "coimbatoreConnect": "Coimbatore has not only been a forerunner in entrepreneurial development but also a place where many agricultural families have diversified into business. This gave him the confidence to branch out into business, as a first generation entrepreneur.",
-      "voiceForYouth": "He dreams of becoming an entrepreneur. He believes it would give him immense satisfaction, as he would be able to provide employment opportunities to many people while contributing to the creation of wealth for the nation.",
-      "facultyQuote": {
-        "text": "Rajkumar is a highly self motivated individual. As a student, he exhibited leadership skills by organizing events like the EXE Meet. I always found him to be an active participant in extra curricular activities.",
-        "author": "Dr. R. Nandagopal",
-        "title": "Former Director, PSGIM"
-      }
+      "voiceForYouth": "He dreams of becoming an entrepreneur. He believes it would give him immense satisfaction, as he would be able to provide employment opportunities to many people while contributing to the creation of wealth for the nation."
     }
   },
   {
