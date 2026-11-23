@@ -71,7 +71,50 @@ const ALUMNI_DATA = [
     "image": "https://psgmaa.com/wp-content/uploads/elementor/thumbs/Mr.-T-Rajkumar-rbvvgl9xtpy0tq4oooho7034ct5h9evgxsdsyr5qak.png",
     "sector": "Manufacturing & Infrastructure",
     "decade": "1980s",
-    "company": "New Delhi"
+    "company": "New Delhi",
+    "profile": {
+      "about": "Mr. T. Rajkumar is a dynamic and versatile industrialist based in Coimbatore. He is the Chairman of Sri Mahasakthi Mills Limited, Foundation One Infrastructures Pvt. Ltd., the Southern India Mills' Association (Coimbatore) and the SIMA Cotton Development & Research Association (SIMA CDRA). He is the Vice Chairman of the Confederation of Indian Textile Industry (CITI), New Delhi. He is also a member of the governing council of NGM College, Pollachi and PPG College of Technology. He is a Member of the Academic Council of PSG College of Arts and Science and a member in the Board of Studies of Bharathiar University and PSG Institute of Management. He is the Secretary of Nachimuthu Gounder Rukmani Ammal Charitable Trust and Joint Secretary of Sri Purandaradasar Sangeetha Vidyalaya (Coimbatore), a social and cultural organization dedicated to the cause of development of Arts and Music.",
+      "experiences": [
+        {
+          "role": "Chairman",
+          "company": "Foundation One Infrastructures Pvt. Ltd.",
+          "period": "2008 – Present",
+          "location": "Coimbatore, Tamil Nadu, India",
+          "url": "https://foundation1.in/"
+        },
+        {
+          "role": "Chairman",
+          "company": "Sri Mahasakthi Mills Limited",
+          "period": "1995 – Present",
+          "location": "Coimbatore, Tamil Nadu, India",
+          "url": "https://mahasakthi.com/"
+        }
+      ],
+      "associatedOrgs": [
+        {
+          "org": "National Skill Development Corporation (NSDC)",
+          "role": "Former Director · 2019 – Present; Director in NSDC and NSDC International (2019 – 2024)"
+        },
+        {
+          "org": "The Southern India Mills' Association (SIMA)",
+          "role": "Chairman · 2013 – 2015"
+        },
+        {
+          "org": "SIMA Cotton Development Research Association (SIMA CDRA)",
+          "role": "Chairman · 2012 – 2014"
+        }
+      ],
+      "almamater": "His time in PSGIM was everything to him. He had an opportunity to be the Chairman of EXE Games 1991 celebrations, Chairman of Silver Jubilee celebrations of PSGIM, and also the Secretary of Management Association of PSGIM for 1990-91. All this helped develop his leadership qualities, which gave him the confidence to lead the organisations that he is heading today.",
+      "careerPath": "When he was doing his project work in PSGIM, the motivation to take up entrepreneurship came from his cousin sister's husband who was in the fertilizer business. At that point in time, he was the only family member who was doing business and under his guidance he set up Universal Pesticides and Chemicals in 1991 in Arasur. He became active in the textile business from 1994 and later in the infrastructure sector.",
+      "contribution": "He served as member of Cotton Advisory Board and Cotton Yarn Advisory Board for more than five years, when he worked towards enhancing cotton crop production and forecasting, and yarn exports. He was the Chairman of Arulmigu Masani Amman Temple and Charities, Annamalai, for over four years, during which the temple underwent major renovations at a cost of Rs. 10 crore. He is also a member of Textile Export Promotion Council. They manage two schools that cater to underprivileged children.",
+      "coimbatoreConnect": "Coimbatore has not only been a forerunner in entrepreneurial development but also a place where many agricultural families have diversified into business. This gave him the confidence to branch out into business, as a first generation entrepreneur.",
+      "voiceForYouth": "He dreams of becoming an entrepreneur. He believes it would give him immense satisfaction, as he would be able to provide employment opportunities to many people while contributing to the creation of wealth for the nation.",
+      "facultyQuote": {
+        "text": "Rajkumar is a highly self motivated individual. As a student, he exhibited leadership skills by organizing events like the EXE Meet. I always found him to be an active participant in extra curricular activities.",
+        "author": "Dr. R. Nandagopal",
+        "title": "Former Director, PSGIM"
+      }
+    }
   },
   {
     "id": 7,
