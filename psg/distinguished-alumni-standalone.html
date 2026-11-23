@@ -237,10 +237,10 @@
 
 
   <!-- MOBILE BOTTOM SHEET MODAL (PSGIM BRANDED) -->
-  <div id="alumni-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-xs flex items-end sm:items-center justify-center">
+  <div id="alumni-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-xs flex items-end sm:items-center justify-center overscroll-contain">
     
     <!-- Dialog Sheet Container -->
-    <div class="relative bg-white rounded-t-3xl sm:rounded-2xl max-w-xl w-full max-h-[88vh] overflow-y-auto shadow-2xl border-t sm:border border-slate-200 animate-slide-up p-5 sm:p-6 pb-safe overflow-hidden">
+    <div class="relative bg-white rounded-t-3xl sm:rounded-2xl max-w-xl w-full max-h-[88vh] overflow-y-auto overscroll-contain shadow-2xl border-t sm:border border-slate-200 animate-slide-up p-5 sm:p-6 pb-safe">
       
       <!-- Drag handle indicator for mobile sheet -->
       <div class="w-12 h-1 bg-slate-300 rounded-full mx-auto mb-4 sm:hidden"></div>
@@ -1306,11 +1306,13 @@ if (typeof module !== 'undefined' && module.exports) {
       `;
 
       modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
       lucide.createIcons();
     }
 
     function closeModal() {
       document.getElementById('alumni-modal').classList.add('hidden');
+      document.body.style.overflow = '';
     }
 
     // Native Web Share API
@@ -1318,12 +1320,12 @@ if (typeof module !== 'undefined' && module.exports) {
       const decodedName = decodeURIComponent(name);
       if (navigator.share) {
         navigator.share({
-          title: `${decodedName} â€” PSGIM Distinguished Alumnus (${year})`,
+          title: `${decodedName} — PSGIM Distinguished Alumnus (${year})`,
           text: `Honoring ${decodedName}, PSG Institute of Management Distinguished Alumnus Awardee (${year}).`,
           url: window.location.href,
         }).catch(() => {});
       } else {
-        navigator.clipboard.writeText(`${decodedName} â€” PSGIM Distinguished Alumnus (${year}) ${window.location.href}`);
+        navigator.clipboard.writeText(`${decodedName} — PSGIM Distinguished Alumnus (${year}) ${window.location.href}`);
         alert('Profile link copied to clipboard!');
       }
     }
@@ -1331,6 +1333,11 @@ if (typeof module !== 'undefined' && module.exports) {
     // Close on outside tap
     document.getElementById('alumni-modal').addEventListener('click', (e) => {
       if (e.target.id === 'alumni-modal') closeModal();
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
     });
   </script>
 

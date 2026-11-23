@@ -237,10 +237,10 @@
 
 
   <!-- MOBILE BOTTOM SHEET MODAL (PSGIM BRANDED) -->
-  <div id="alumni-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-xs flex items-end sm:items-center justify-center">
+  <div id="alumni-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-xs flex items-end sm:items-center justify-center overscroll-contain">
     
     <!-- Dialog Sheet Container -->
-    <div class="relative bg-white rounded-t-3xl sm:rounded-2xl max-w-xl w-full max-h-[88vh] overflow-y-auto shadow-2xl border-t sm:border border-slate-200 animate-slide-up p-5 sm:p-6 pb-safe overflow-hidden">
+    <div class="relative bg-white rounded-t-3xl sm:rounded-2xl max-w-xl w-full max-h-[88vh] overflow-y-auto overscroll-contain shadow-2xl border-t sm:border border-slate-200 animate-slide-up p-5 sm:p-6 pb-safe">
       
       <!-- Drag handle indicator for mobile sheet -->
       <div class="w-12 h-1 bg-slate-300 rounded-full mx-auto mb-4 sm:hidden"></div>
@@ -821,11 +821,13 @@
       `;
 
       modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
       lucide.createIcons();
     }
 
     function closeModal() {
       document.getElementById('alumni-modal').classList.add('hidden');
+      document.body.style.overflow = '';
     }
 
     // Native Web Share API
@@ -846,6 +848,11 @@
     // Close on outside tap
     document.getElementById('alumni-modal').addEventListener('click', (e) => {
       if (e.target.id === 'alumni-modal') closeModal();
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
     });
   </script>
 
